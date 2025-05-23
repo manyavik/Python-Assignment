@@ -33,8 +33,13 @@ def toWord(x):
     if (x>=20 and x<=99):
         onesVal = int(x % 10)
         tensVal = int((x - onesVal)/10)
-        word = tens[tensVal] + " " + ones[onesVal]
-    
+        word = tens[tensVal] + "-" + ones[onesVal]
+    if (x>=100 and x<=999):
+        onesVal = int(x%10)
+        tensVal = int(((x-onesVal)/10)%10)
+        hundredsVal = int(x / 100)
+        word = ones[hundredsVal] + " hundred " + tens[tensVal] + "-" + ones[onesVal]
     return word
 
-print(toWord(99))
+print(toWord(999))
+
